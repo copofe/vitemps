@@ -1,0 +1,19 @@
+{
+  "name": "vitemps",
+  "version": "0.0.1",
+  "description": "vue project templates",
+  "author": "shinji",
+  "scripts": {
+    "commit": "commit"
+  },
+  "license": "ISC",
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=6"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/prompt-cli": "^15.0.0"
+  }
+}

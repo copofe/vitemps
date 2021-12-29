@@ -1,9 +1,9 @@
 <script lang="ts">
 export default {
-  name: "App",
+  name: "LayoutDefault",
 };
 </script>
 
 <template>
-  <router-view></router-view>
+  <router-view />
 </template>

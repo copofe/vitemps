@@ -2,11 +2,10 @@
   "name": "vitemps",
   "version": "0.0.1",
   "description": "vue project templates",
-  "author": "shinji",
+  "author": "copofe <me@shinji.me>",
   "scripts": {
     "commit": "commit"
   },
-  "license": "ISC",
   "engines": {
     "node": ">=14",
     "pnpm": ">=6"
@@ -16,6 +15,7 @@
     "@commitlint/config-conventional": "^15.0.0",
     "@commitlint/prompt-cli": "^15.0.0",
     "eslint": "^8.5.0",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "typescript": "^4.5.4"
   }
 }

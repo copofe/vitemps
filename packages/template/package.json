@@ -7,16 +7,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@copofe/utils": "^0.0.1",
     "pinia": "^2.0.9",
+    "types": "workspace:*",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
   "devDependencies": {
-    "@copofe/eslint-config-vue": "^0.0.3",
+    "@copofe/eslint-config": "^0.1.1",
     "@types/node": "^17.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "@vitejs/plugin-vue": "^2.0.0",
-    "types": "workspace:*",
-    "typescript": "^4.4.4",
     "unocss": "^0.18.1",
     "unplugin-vue-components": "^0.17.11",
     "vite": "^2.7.2",

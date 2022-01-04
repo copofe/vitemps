@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -11,11 +11,11 @@ const routes: RouteRecordRaw[] = [
         name: 'Index',
         component: () => import(/* webpackChunkName: "index" */ '@/pages/Index.vue'),
       },
-    ]
-  }
-]
+    ],
+  },
+];
 
-export const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});

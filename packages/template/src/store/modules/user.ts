@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia';
-import { UserInfo } from 'types';
+import scopeStorage from '@/utils/storage';
 
-export default defineStore('global', {
+export default defineStore('user', {
   state: (): UserInfo => ({
     id: undefined,
+    token: scopeStorage.token || '',
   }),
   getters: {
     isLoggedIn: (state): boolean => !!state.id,

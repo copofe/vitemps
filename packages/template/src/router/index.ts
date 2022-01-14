@@ -1,21 +1,30 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+import { auth, permission } from './guards';
+import routes from './routes';
 
-const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    name: 'LayoutDefault',
-    component: () => import(/* webpackChunkName: "layout-default" */ '@/layouts/Default.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Index',
-        component: () => import(/* webpackChunkName: "index" */ '@/pages/Index.vue'),
-      },
-    ],
-  },
-];
+routes.push({
+  path: '/:pathMatch(.*)*',
+  redirect: () => ({ name: '404' }),
+});
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { top: 0 };
+  },
 });
+
+const guards = [auth, permission];
+guards.forEach((guard) => {
+  router.beforeEach(guard);
+});
+
+router.onError((error) => {
+  throw new Error(error);
+});
+
+export default router;

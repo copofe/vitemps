@@ -4,15 +4,15 @@ const routes: RouteRecordRaw[] = [
   {
     path: 'dashboard',
     name: 'Dashboard',
-    component: () => import('./Index.vue'),
+    component: () => import('./index.vue'),
   },
 ];
 
 const locale: Locale = {
-  en: {
+  en_US: {
     'menu.dashboard': 'Dashboard',
   },
-  zh: {
+  zh_CN: {
     'menu.dashboard': '仪表盘',
   },
 };

@@ -3,10 +3,16 @@ import store from './store';
 import App from './App.vue';
 import router from './router';
 import i18n from './locale';
-import './mock';
+import config from './config';
 
 import 'uno.css';
 import '@unocss/reset/tailwind.css';
+
+const { PROD } = import.meta.env;
+
+if (!PROD && config.mock) {
+  import ('./mock');
+}
 
 createApp(App)
   .use(store)

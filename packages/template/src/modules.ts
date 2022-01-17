@@ -1,11 +1,14 @@
 import { RouteRecordRaw } from 'vue-router';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { MockjsMock } from 'mockjs';
 import Dashboard from './pages/dashboard';
 
-interface Modules {
+interface Module {
   routes: RouteRecordRaw[];
   locale?: Locale;
+  mock?: MockjsMock[]
 }
 
-const modules: Modules[] = [Dashboard];
+const modules: Module[] = [Dashboard];
 
 export default modules;

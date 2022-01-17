@@ -3,7 +3,7 @@ import { useUserStore } from '@/store';
 
 export function auth(to: RouteLocationNormalized): void | RouteLocationRaw {
   const { token } = useUserStore();
-  if (!token && to.meta.auth !== 'optional') {
+  if (!token && to.meta.auth === 'required') {
     return {
       path: '/login',
       query: { redirect: encodeURIComponent(to.fullPath) },
@@ -11,6 +11,7 @@ export function auth(to: RouteLocationNormalized): void | RouteLocationRaw {
   }
   return undefined;
 }
+
 export function permission(): void {
   return undefined;
 }

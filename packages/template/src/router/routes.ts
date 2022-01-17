@@ -1,9 +1,9 @@
 import { RouteRecordRaw } from 'vue-router';
 import modules from '@/modules';
 
-const children: RouteRecordRaw[] = [];
+const pages: RouteRecordRaw[] = [];
 modules.forEach((module) => {
-  children.push(...module.routes);
+  pages.push(...module.routes);
 });
 
 const routes: RouteRecordRaw[] = [
@@ -11,15 +11,15 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     name: 'LayoutAdmin',
     redirect: '/dashboard',
-    component: () => import('@/layouts/Admin.vue'),
-    children,
+    component: () => import('@/layouts/admin.vue'),
+    children: pages,
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/pages/Login.vue'),
+    component: () => import('@/pages/login.vue'),
     meta: {
-      auth: 'optional',
+      auth: 'none',
     },
   },
   {

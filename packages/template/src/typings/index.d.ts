@@ -4,6 +4,6 @@ interface UserInfo {
 }
 
 interface Locale {
-  en: Record<string, string>
-  zh: Record<string, string>
+  en_US: Record<string, string>
+  zh_CN: Record<string, string>
 }

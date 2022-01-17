@@ -3,7 +3,7 @@ import modules from '@/modules';
 
 const locale = {};
 modules.forEach((module) => {
-  if (module.locale) Object.assign(locale, module.locale.zh);
+  if (module.locale) Object.assign(locale, module.locale.zh_CN);
 });
 
 export default {

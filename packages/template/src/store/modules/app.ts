@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import scopedStorage from '@/utils/storage';
+import proxyStorage from '::/utils/proxy-storage';
 
 interface SystemState {
   locale: string;
@@ -7,6 +7,6 @@ interface SystemState {
 
 export default defineStore('system', {
   state: (): SystemState => ({
-    locale: scopedStorage.locale || 'zh-CN',
+    locale: proxyStorage.locale || 'zh-CN',
   }),
 });

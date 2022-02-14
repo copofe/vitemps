@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { auth, permission } from './guards';
+import guards from './guards';
 import routes from './routes';
 
 routes.push({
@@ -18,7 +18,6 @@ const router = createRouter({
   },
 });
 
-const guards = [auth, permission];
 guards.forEach((guard) => {
   router.beforeEach(guard);
 });

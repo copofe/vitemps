@@ -1,23 +1,19 @@
 import { RouteRecordRaw } from 'vue-router';
-import modules from '@/modules';
+import Dashboard from '::/pages/dashboard';
 
-const pages: RouteRecordRaw[] = [];
-modules.forEach((module) => {
-  pages.push(...module.routes);
-});
-
+const pages: RouteRecordRaw[] = [...Dashboard];
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'LayoutAdmin',
     redirect: '/dashboard',
-    component: () => import('@/layouts/admin.vue'),
+    component: () => import('::/layouts/admin.vue'),
     children: pages,
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/pages/login.vue'),
+    component: () => import('::/pages/login.vue'),
     meta: {
       auth: 'none',
     },
@@ -25,7 +21,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/404',
     name: '404',
-    component: () => import('@/pages/404.vue'),
+    component: () => import('::/pages/404.vue'),
     meta: {
       auth: 'optional',
     },

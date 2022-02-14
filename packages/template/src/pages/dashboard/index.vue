@@ -1,9 +1,5 @@
-<script lang="ts">
-export default {
-  name: 'Dashboard',
-};
-</script>
-
 <template>
-  <router-view />
+  <div>
+    {{ $t('setting.language') }}
+  </div>
 </template>

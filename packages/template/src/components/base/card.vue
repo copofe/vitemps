@@ -1,14 +1,15 @@
 <script lang="ts" setup>
+type Key = string | number;
 interface BaseCardProps {
-  full: boolean;
-  title: string;
-  tabList: {
-    key: string;
+  full?: boolean;
+  title?: string;
+  tabList?: {
+    key: Key;
     tab: string;
   }[];
-  tabActiveKey: string | number;
-  bordered: boolean;
-  bodyClass: string;
+  tabActiveKey?: Key;
+  bordered?: boolean;
+  bodyClass?: string;
 }
 
 withDefaults(defineProps<BaseCardProps>(), {
@@ -20,7 +21,7 @@ withDefaults(defineProps<BaseCardProps>(), {
   bodyClass: '',
 });
 
-const emit = defineEmits<{ (e: 'update:tabActiveKey', k: string): void }>();
+const emit = defineEmits<{ (e: 'update:tabActiveKey', k: Key): void }>();
 </script>
 
 <template>
@@ -44,7 +45,7 @@ const emit = defineEmits<{ (e: 'update:tabActiveKey', k: string): void }>();
       :active-key="tabActiveKey"
       :right-extra="$slots.tabExtra || null"
       :tab-bar-style="{ marginBottom: 0, padding: '0 12px' }"
-      @change="(k: string) => emit('update:tabActiveKey', k)"
+      @change="(k: Key) => emit('update:tabActiveKey', k)"
     >
       <a-tab-pane v-for="item in tabList" :key="item.key" :tab="item.tab" />
     </a-tabs>

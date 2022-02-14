@@ -8,16 +8,4 @@ const routes: RouteRecordRaw[] = [
   },
 ];
 
-const locale: Locale = {
-  en_US: {
-    'menu.dashboard': 'Dashboard',
-  },
-  zh_CN: {
-    'menu.dashboard': '仪表盘',
-  },
-};
-
-export default {
-  routes,
-  locale,
-};
+export default routes;

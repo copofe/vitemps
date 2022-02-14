@@ -1,7 +1,7 @@
 import { RouteLocationNormalized, RouteLocationRaw } from 'vue-router';
-import { useUserStore } from '@/store';
+import { useUserStore } from '::/store';
 
-export function auth(to: RouteLocationNormalized): void | RouteLocationRaw {
+function auth(to: RouteLocationNormalized): void | RouteLocationRaw {
   const { token } = useUserStore();
   if (!token && to.meta.auth === 'required') {
     return {
@@ -12,6 +12,8 @@ export function auth(to: RouteLocationNormalized): void | RouteLocationRaw {
   return undefined;
 }
 
-export function permission(): void {
+function permission(): void {
   return undefined;
 }
+
+export default [auth, permission];

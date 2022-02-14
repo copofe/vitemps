@@ -2,7 +2,7 @@
 import { watch } from 'vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
-import { useAppStore } from '@/store';
+import { useAppStore } from '::/store';
 
 const systemStore = useAppStore();
 watch(() => systemStore.locale, (val) => {

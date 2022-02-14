@@ -12,10 +12,11 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types": [
+      "node",
       "unplugin-icons/types/vue"
     ],
     "paths": {
-      "@/*": ["src/*"]
+      "::/*": ["src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "components.d.ts"]

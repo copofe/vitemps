@@ -1,4 +1,10 @@
 export default {
-  prefix: 'cp', // used in storage
+  storage: {
+    prefix: 'cp',
+    db: {
+      token: '',
+      locale: '',
+    },
+  },
   mock: false,
 };

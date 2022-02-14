@@ -11,11 +11,15 @@ import '@unocss/reset/tailwind.css';
 const { PROD } = import.meta.env;
 
 if (!PROD && config.mock) {
-  import ('./mock');
+  import('./mock');
 }
 
-createApp(App)
-  .use(store)
-  .use(router)
-  .use(i18n)
-  .mount('#app');
+async function bootstrap() {
+  createApp(App)
+    .use(store)
+    .use(router)
+    .use(i18n)
+    .mount('#app');
+}
+
+bootstrap();
